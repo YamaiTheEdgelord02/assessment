@@ -11,8 +11,20 @@ button {
     background-color: #337ab7;
     color: #fdffff;
     border-style: none;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+button:hover {
+    opacity: 0.8;
 }
 
 input {
     height: 20px;
+    outline: solid 1px black;
+}
+
+a {
+    text-decoration: none;
+    color: #fdffff;
 }

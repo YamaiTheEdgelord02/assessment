@@ -8,9 +8,15 @@ assessmentButton.addEventListener(
     "click",
     () => {
         const userName = userNameInput.value;
-        if (userName.length === 0) {
+        if(userName.length === 0) {
             // 名前が空の時は処理を終了する
-            return;
+            resultDivision.innerText = "";
+            tweetDivision.innerText = "";
+            return alert("名前を入力して下さい");
+        } else if(userName === "do test") {
+            resultDivision.innerText = "";
+            tweetDivision.innerText = "";
+            return test();
         }
 
         // 診断結果表示エリアの作成
@@ -48,8 +54,8 @@ assessmentButton.addEventListener(
 
 userNameInput.addEventListener(
     "keydown",
-    event => {
-        if (event.code === "Enter") {
+    (event) => {
+        if(event.code === "Enter") {
             assessmentButton.dispatchEvent(new Event("click"))
         }
     }
@@ -146,5 +152,3 @@ function test() {
 
     console.log("同じ名前なら、同じ結果を出力することのテスト終了");
 }
-
-test();
